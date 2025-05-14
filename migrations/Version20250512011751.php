@@ -20,7 +20,7 @@ final class Version20250512011751 extends AbstractMigration
     public function up(Schema $schema): void
     {
         $this->addSql("INSERT INTO user (email, roles, password) 
-        VALUES ('superebuloneria@gmail.com', '[\"ROLE_ADMIN\"]', '\$2y\$13\$zq1o4856VgXtYxOSUUPbH.e3mEIAKMYIZpYH4u/XORS72gxK2t4.W')");
+        VALUES ('superbuloneria@gmail.com', '[\"ROLE_ADMIN\"]', '\$2y\$13\$zq1o4856VgXtYxOSUUPbH.e3mEIAKMYIZpYH4u/XORS72gxK2t4.W')");
 
 
     }

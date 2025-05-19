@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Product;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
@@ -16,6 +17,14 @@ class ProductCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Product::class;
+    }
+    public function configureCrud(Crud $crud): Crud
+    {
+        return $crud
+        ->setPageTitle('index', 'Listado de productos')
+        ->setPageTitle('edit', 'Editar producto')
+        ->setPageTitle('new', 'Crear producto')
+        ->setPaginatorPageSize(10); 
     }
 
     

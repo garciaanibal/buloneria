@@ -8,13 +8,14 @@
         {% block stylesheets %}
         {% endblock %}   
           
-    
+        {% block javascripts %}
+            {{ importmap('app') }}
+        {% endblock %}
     </head>
     <body>
+        {% include 'includes/header.html.twig' %}
         {% block body %}{% endblock %}
-
+        {% include 'includes/footer.html.twig' %}
     </body>
-    {% block javascripts %}
-        {% block importmap %}{{ importmap('app') }}{% endblock %}
-    {% endblock %}
+
 </html>

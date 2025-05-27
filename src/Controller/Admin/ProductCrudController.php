@@ -3,8 +3,11 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Product;
+use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\MoneyField;
@@ -28,7 +31,36 @@ class ProductCrudController extends AbstractCrudController
         ->setPaginatorPageSize(10); 
     }
 
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->update(Crud::PAGE_INDEX, Action::NEW, function (Action $action) {
+                return $action->setLabel('Agregar Producto');
+            });
+            // ->update(Crud::PAGE_INDEX, Action::EDIT, function (Action $action) {
+            //     return $action->setLabel('Editar');
+            // })
+            // ->update(Crud::PAGE_INDEX, Action::DELETE, function (Action $action) {
+            //     return $action->setLabel('Eliminar');
+            // });
+    }
     
+    public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void
+    {
+        if (!$entityInstance instanceof Product) return;
+
+        parent::persistEntity($entityManager, $entityInstance);
+
+        // Flash message
+        $this->addFlash('success', '¡Producto agregado con éxito!');
+    }
+
+    public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
+    {
+        parent::updateEntity($entityManager, $entityInstance);
+        $this->addFlash('info', 'Producto actualizado correctamente.');
+    }
+
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -80,5 +112,6 @@ class ProductCrudController extends AbstractCrudController
                 }),
         ];
     }
-    
+
+
 }

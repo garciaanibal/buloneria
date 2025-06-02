@@ -81,7 +81,7 @@ class ProductCrudController extends AbstractCrudController
             FormField::addColumn('col-md-6')
                 ->addPanel('Datos económicos', 'fa fa-euro-sign'),
                 
-            MoneyField::new('purchase_price', 'Precio de venta')
+            MoneyField::new('purchase_price', 'Precio de costo')
                 ->setColumns('col-4')
                 ->setCurrency('ARS')  
                 ->setNumDecimals(2)

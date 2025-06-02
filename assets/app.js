@@ -1,26 +1,11 @@
-import './bootstrap.js';
 /*
  * Welcome to your app's main JavaScript file!
  *
- * This file will be included onto the page via the importmap() Twig function,
- * which should already be in your base.html.twig.
+ * We recommend including the built version of this JavaScript file
+ * (and its CSS file) in your base layout (base.html.twig).
  */
-import './styles/app.css';
-// import './styles/signin.css';
 
+// any CSS you import will output into a single css file (app.css in this case)
+import './scss/app.scss';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
-
-// Menú responsive
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            const nav = document.querySelector('#main-nav');
-            nav.classList.toggle('active');
-            this.textContent = nav.classList.contains('active') ? '✕' : '☰';
-        });
-    }
-});
-
-console.log("🟢 app.js cargado correctamente");
+// console.log('estoy aqui');

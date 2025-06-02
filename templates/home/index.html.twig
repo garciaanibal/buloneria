@@ -2,6 +2,24 @@
 
 {% block title %}lubricentro el Gaita{% endblock %}
 
+{% block stylesheets %}
+ {{ parent() }}
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+{% endblock %}
 
 {% block body %}
 
@@ -156,7 +174,8 @@
 
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
       <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" 
+              tyle="background-image: url('{{ asset('build/images/unsplash-photo-1.jpg') }}');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h2>
             <ul class="d-flex list-unstyled mt-auto">
@@ -167,17 +186,14 @@
                 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
                 <small>Earth</small>
               </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                <small>3d</small>
-              </li>
             </ul>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" 
+              style="background-image: url('{{ asset('build/images/unsplash-photo-2.jpg') }}');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h2>
             <ul class="d-flex list-unstyled mt-auto">
@@ -188,17 +204,14 @@
                 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
                 <small>Pakistan</small>
               </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                <small>4d</small>
-              </li>
             </ul>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-3.jpg');">
+        <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" 
+              style="background-image: url('{{ asset('build/images/unsplash-photo-3.jpg') }}');">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
             <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h2>
             <ul class="d-flex list-unstyled mt-auto">
@@ -209,9 +222,6 @@
                 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
                 <small>California</small>
               </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-                <small>5d</small>
               </li>
             </ul>
           </div>

@@ -2,3 +2,52 @@
 body {
     background-color: lightgray;
 }
+
+/* Estilos del footer */
+.footer_class {
+    background-color: #303846; /* Color de fondo */
+    padding: 2rem 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;          /* Activa Flexbox */
+    justify-content: space-between; /* Distribuye el espacio entre columnas */
+    max-width: 1200px;      /* Ancho máximo del contenedor */
+    margin: 0 auto;         /* Centra el contenedor */
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;               /* Cada sección ocupa igual espacio */
+    padding: 0 15px;       /* Espaciado interno */
+    min-width: 200px;      /* Ancho mínimo por columna */
+}
+
+.footer-section h3 {
+    color: #ffff;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    color: #ffff;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ffff;
+    color: #ffff;
+}
